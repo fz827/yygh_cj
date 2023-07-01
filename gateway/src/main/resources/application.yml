@@ -1,0 +1,28 @@
+server:
+  port: 80
+spring:
+  application:
+    name: gateway-cj
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+    gateway:
+      enabled: true
+      routes:
+         -  id: consumer-hospital-cj-router
+            uri: lb://consumer-hospital-cj
+            predicates:
+              - Path=/department/**,/doctor/**
+
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+      jedis:
+        pool:
+          max-active: 8
+    database: 0
+

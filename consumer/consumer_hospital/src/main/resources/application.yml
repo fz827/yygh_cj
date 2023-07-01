@@ -1,0 +1,21 @@
+server:
+  port: 8301
+
+spring:
+  application:
+    name: consumer-hospital-cj
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+  main:
+    allow-bean-definition-overriding: true
+
+
+
+
+
+
+
+
